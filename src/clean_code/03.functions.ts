@@ -13,7 +13,7 @@
     }
     interface Movie { title: string, description: string, rating: number, cast: string[] }
 
-    function createMovie({ title, description, rating, cast } : Movie) {
+    function createMovie({ title, description, rating, cast }: Movie) {
         console.log({ title, description, rating, cast });
     }
 
@@ -29,7 +29,12 @@
 
     }
 
+    const getPayAmount = ({ isDead = false, isSeparated = true, isRetired = false }): number => {
 
+        if (isDead) return 1500;
+
+        return isSeparated ? 2500 : isRetired ? 3000 : 4000;
+    }
 
 
 })();
