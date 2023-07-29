@@ -35,7 +35,5 @@
 
         return isSeparated ? 2500 : isRetired ? 3000 : 4000;
     }
-
-
 })();
 
