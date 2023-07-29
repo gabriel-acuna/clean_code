@@ -1,1 +1,1 @@
-console.log({ id: crypto.randomUUID()})
+import './clean_code/04.task_functions'
