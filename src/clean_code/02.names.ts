@@ -1,60 +1,43 @@
 (() => {
 
-    // celsius temperature arrangement
-    const arrayOfNums = [33.6, 12.34];
+    const celsiusTemperatures = [33.6, 12.34];
 
-    // IP address of the server
-    const ip = '123.123.123.123';
+    const serverIP = '123.123.123.123';
 
-    // User list
-    const people = [{id: 1, email: 'fernando@google.com'},{ id: 2, email: 'juan@google.com' }, { id: 3, email: 'melissa@google.com' }];
+    const users = [{ id: 1, email: 'fernando@google.com' }, { id: 2, email: 'juan@google.com' }, { id: 3, email: 'melissa@google.com' }];
 
-    // User email list
-    const emails = people.map( u => u.email );
+    const userEmails = users.map(user => user.email);
 
-    // Boolean variebles of a game
-    const jump = false;
-    const run = true;
-    const noTieneItems = true;
-    const loading = false;
+    const canJump = false;
+    const canRun = true;
+    const hasItems = false;
+    const isLoading = false;
 
     // inicial time
-    const start = new Date().getTime();
+    const startTime = new Date().getTime();
     //....
     // some oprations
     //...
     // final time
-    const end = new Date().getTime() - start;
+    const endTime = new Date().getTime() - startTime;
 
 
     /**Fuctions */
-    // get Books
-    function book() {
+    function getBooks() {
         throw new Error('Function not implemented.');
     }
 
-    // get a book by url
-    function BooksUrl( u: string) {
-        throw new Error('Function not implemented.');
-    }
-    
-    // Gets the area of ​​a square based on its side.
-    function areaCuadrado( s: number ) {
+    function getBookByUrl(u: string) {
         throw new Error('Function not implemented.');
     }
 
-    // print the job
-    function printJobIfJobIsActive() {
+    function getSquareArea(side: number) {
         throw new Error('Function not implemented.');
     }
-    
-    
 
-
+    function printJob() {
+        throw new Error('Function not implemented.');
+    }
 
 
 })();
-
-
-
-
