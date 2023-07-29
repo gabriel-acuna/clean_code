@@ -1,39 +1,35 @@
 (() => {
 
-    // function to get information of a movie by Id
-    function getAllMovies( movieId: string ) {
-        console.log({ movieId });
-    }
-
-    // function to get information about the actors in a movie - Actors o Cast // id = movieId getMovieCast
-    function getAllMovieActors( id: string ) {
+    function getMovieById(id: string) {
         console.log({ id });
     }
 
-    // function to get the bio of the actor by the id
-    function getUsuario( ActorId: string ) {
-        console.log({ ActorId });
+    function getMovieCastById(id: string) {
+        console.log({ id });
     }
-    
-    // Crate a movie
-    function movie(title: string, description: string, rating: number, cast: string[] ) {
+
+    function getActorBioById(id: string) {
+        console.log({ id });
+    }
+    interface Movie { title: string, description: string, rating: number, cast: string[] }
+
+    function createMovie({ title, description, rating, cast } : Movie) {
         console.log({ title, description, rating, cast });
     }
 
-    // Create an actor
-    function createActorIfActorNotExists( fullName: string, birthdate: Date ): boolean {
-        
+    function createActor(fullName: string, birthdate: Date): boolean {
+
         // asynx task to verify name
         // ..
         // ..
-        if ( fullName === 'fernando' ) return false;
+        if (fullName === 'fernando') return false;
 
         console.log('Crear actor');
-        return true;        
+        return true;
 
     }
 
-    
+
 
 
 })();
