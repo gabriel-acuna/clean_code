@@ -1,17 +1,15 @@
 (() => {
 
-    // Files to evaluate
-    const fs = [
-        { id: 1, f: false },
-        { id: 2, f: false },
-        { id: 3, f: true },
-        { id: 4, f: false },
-        { id: 5, f: false },
-        { id: 7, f: true },
+    const filesToEvaluate = [
+        { id: 1, isDeleteable: false },
+        { id: 2, isDeleteable: false },
+        { id: 3, isDeleteable: true },
+        { id: 4, isDeleteable: false },
+        { id: 5, isDeleteable: false },
+        { id: 7, isDeleteable: true },
     ]; 
     
-    // Files to delete
-    const arhivos = fs.map( f => f.f );
+    const filesToDelete = filesToEvaluate.map( file => file.isDeleteable );
 
     
     class AbstractUser { };
@@ -22,30 +20,20 @@
     // Hint
     class User { };
     interface User { };
-
-
     // Todo:
-        
-    // today
-    const ddmmyyyy = new Date();
+    const currentDate = new Date();
     
-    //elapsed time in days
-    const d: number = 23;
+    const elapsedDays: number = 23;
     
-    //number of files in directory
-    const dir = 33;
-    
-    //first name
-    const nombre = 'Gabriel';
-    
-    // last name
-    const apellido = 'Acuña';
+    const filesInDirectory = 33;
 
-    //days since modification
-    const dsm = 12;
+    const firstName = 'Gabriel';
     
-    //max classes per student
-    const max = 6;
+    const lastName = 'Acuña';
+
+    const daysSinceLastModification = 12;
+
+    const maxClassPerStudent = 6;
 
 
 })();
