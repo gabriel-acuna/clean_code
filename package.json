@@ -1,0 +1,30 @@
+{
+  "name": "clean_code",
+  "version": "1.0.0",
+  "description": "Clean code practice",
+  "main": "src/main.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabriel-acuna/clean_code.git"
+  },
+  "keywords": [
+    "ts",
+    "solid",
+    "clean_code"
+  ],
+  "author": "Gabriel Acuña",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabriel-acuna/clean_code/issues"
+  },
+  "homepage": "https://github.com/gabriel-acuna/clean_code#readme",
+  "dependencies": {
+    "typescript": "^5.1.6",
+    "vite": "^4.4.7"
+  }
+}
