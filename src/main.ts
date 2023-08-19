@@ -1,1 +1,1 @@
-import './clean_code/04.task_functions'
+import './clean_code/05.dry'
