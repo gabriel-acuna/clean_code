@@ -1,1 +1,1 @@
-import './clean_code/05.dry'
+import './clean_code/06.classes-a'
