@@ -1,43 +1,41 @@
-(()=>{
+(() => {
+  //* Apply the single responsibility principle
+  //* Prioritize composition over inheritance
 
-    //* Apply the single responsibility principle
-    //* Prioritize composition over inheritance
+  type HtmlType = "input" | "select" | "textarea" | "radio";
 
-    type HtmlType = 'input'|'select'|'textarea'|'radio';
-   
-    class HtmlElement {
-        constructor(
-            public id: string,
-            public type: HtmlType,
-        ) {}
+  class HtmlElement {
+    constructor(public id: string, public type: HtmlType) {}
+  }
+
+  class InputAttributes {
+    constructor(public placeholder: string, public value: string) {
+      this.placeholder = placeholder;
+      this.value = value;
     }
+  }
 
-    class InputAttributes extends HtmlElement {
-        constructor(
-            public value: string,
-            public placeholder: string,
-            id: string,
-        ) {
-            super(id, 'input');
-        }
+  class InputEvents {
+    constructor() {}
+    setFocus() {}
+    getValue() {}
+    isActive() {}
+    removeValue() {}
+  }
+
+  //? Idea for the new class InputElement
+  class InputElement {
+    attributes: InputAttributes;
+    element: HtmlElement;
+    events: InputEvents;
+    constructor(value: string, placeholder: string, id: string) {
+      this.attributes = new InputAttributes(placeholder, value);
+      this.element = new HtmlElement(id, "input");
+      this.events = new InputEvents();
     }
+  }
 
-    class InputEvents extends InputAttributes {
-        constructor( value: string, placeholder: string, id: string ) {
-            super( value, placeholder, id );
-        }
+  const nameField = new InputElement("Fernando", "Enter first name", "txtName");
 
-        setFocus() {};
-        getValue() {};
-        isActive() {};
-        removeValue() {};
-    }
-
-
-    //? Idea for the new class InputElement
-
-    const nameField = new InputEvents('Fernando', 'Enter first name', 'txtName');
-
-    console.log({ nameField });
-
-})()
+  console.log({ nameField });
+})();
