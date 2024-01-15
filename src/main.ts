@@ -1,1 +1,1 @@
-import './clean_code/06.classes-a'
+import './clean_code/06.classes-c'
