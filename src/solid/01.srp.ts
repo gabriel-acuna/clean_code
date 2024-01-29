@@ -1,48 +1,70 @@
 (() => {
+  interface Product {
+    id: number;
+    name: string;
+  }
+  class ProductService {
+    private httpAdapter: Object;
 
-    interface Product { 
-        id:   number;
-        name: string;
+    getProduct(id: number) {
+      console.log("Product: ", { id, name: "OLED Tv" });
     }
-    // Usually, this is a class to control the view that is displayed to the user.
-    // Remember that we can have many views that do this same job.
-    class ProductBloc {
-    
-        loadProduct( id: number ) {
-            // Carry out a process to obtain the product and return it
-            console.log('Product: ',{ id, name: 'OLED Tv' });
-        }
-    
-        saveProduct( product: Product ) {
-            // Make a request to save in the database 
-            console.log('Saving in database ', product );
-        }
-    
-        notifyClients() {
-            console.log('Sending email to clients');
-        }
-    
-        onAddToCart( productId: number ) {
-            // Add to shopping cart
-            console.log('Adding to cart ', productId );
-        }
-    
+
+    saveProduct(product: Product) {
+      console.log("Saving in database ", product);
     }
-    
+  }
+  class EmailNotificationService {
+    private masterEmail: string = "notifications@exmapledomain.com";
+    sendEmail(
+      emailList: string[],
+      template: "to-clients" | "to-admins",
+      content: string
+    ) {
+      console.log(`Sending email ${template.replace("-", " ")}`);
+    }
+  }
 
+  // Usually, this is a class to control the view that is displayed to the user.
+  // Remember that we can have many views that do this same job.
+  class ProductBloc {
+    constructor(
+      private productService: ProductService,
+      private emailNotificationService: EmailNotificationService
+    ) {
+      this.productService = productService;
+      this.emailNotificationService = emailNotificationService;
+    }
+    loadProduct(id: number) {
+      this.productService.getProduct(id);
+    }
 
-    const productBloc = new ProductBloc();
+    saveProduct(product: Product) {
+      this.productService.saveProduct(product);
+    }
+    notifyClients() {
+      this.emailNotificationService.sendEmail(
+        ["clients@exmapledomain.com"],
+        "to-clients",
+        ""
+      );
+    }
+  }
 
-    productBloc.loadProduct(10);
-    productBloc.saveProduct({ id: 10, name: 'OLED TV' });
-    productBloc.notifyClients();
-    productBloc.onAddToCart(10);
+  class CartBloc {
+    private item: Object[] = [];
+    onAddToCart(productId: number) {
+      // Add to shopping cart
+      console.log("Adding to cart ", productId);
+    }
+  }
+  const productService = new ProductService();
+  const emailNotificationService = new EmailNotificationService();
+  const productBloc = new ProductBloc(productService, emailNotificationService);
+  const cartBloc = new CartBloc();
 
-
-
-
-
-
-
-
+  productBloc.loadProduct(10);
+  productBloc.saveProduct({ id: 10, name: "OLED TV" });
+  productBloc.notifyClients();
+  cartBloc.onAddToCart(10);
 })();
