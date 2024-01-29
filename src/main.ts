@@ -1,1 +1,1 @@
-import './clean_code/07.task'
+import './code-smells/02-low-coupling'
