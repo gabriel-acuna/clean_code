@@ -1,1 +1,1 @@
-import './code-smells/02-low-coupling'
+import './solid/01.srp'
