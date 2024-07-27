@@ -1,39 +1,39 @@
+import { Car } from "./03-liskov-c";
 
-
-export class Tesla {
-
-    constructor( private numberOfSeats: number ) {}
-
-    getNumberOfTeslaSeats() {
-        return this.numberOfSeats;
-    }
+export class Tesla extends Car {
+  constructor(private numberOfSeats: number) {
+    super();
+  }
+  getNumberOfSeats() {
+    return this.numberOfSeats;
+  }
 }
 
-export class Audi {
-
-    constructor( private numberOfSeats: number ) {}
-
-    getNumberOfAudiSeats() {
-        return this.numberOfSeats;
-    }
+export class Audi extends Car {
+  constructor(private numberOfSeats: number) {
+    super();
+  }
+  getNumberOfSeats() {
+    return this.numberOfSeats;
+  }
 }
 
-export class Toyota {
+export class Toyota extends Car {
+  constructor(private numberOfSeats: number) {
+    super();
+  }
 
-    constructor( private numberOfSeats: number ) {}
-
-    getNumberOfToyotaSeats() {
-        return this.numberOfSeats;
-    }
+  getNumberOfSeats() {
+    return this.numberOfSeats;
+  }
 }
 
-export class Honda {
+export class Honda extends Car {
+  constructor(private numberOfSeats: number) {
+    super();
+  }
 
-    constructor( private numberOfSeats: number ) {}
-
-    getNumberOfHondaSeats() {
-        return this.numberOfSeats;
-    }
+  getNumberOfSeats() {
+    return this.numberOfSeats;
+  }
 }
-
-
