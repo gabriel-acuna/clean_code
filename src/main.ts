@@ -1,1 +1,1 @@
-import './solid/02.open-close-a'
+import './solid/03-liskov-a'
